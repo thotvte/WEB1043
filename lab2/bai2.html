@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //nhap vao thu nhat cua tam giac
+        let a = prompt("nhap vao canh thu nhat cua tam giac: ");
+        //ep kieu gia tri vua nhap sang kieu float
+        let a1 = parseFloat(a);
+        //nhap vao canh thu hai cua tam giac
+        let b = prompt("nhap vao canh thu hai cua tam giac: ");
+        //ep kieu gia tri vua nhap sang kieu float
+        let b1 = parseFloat(b);
+        //nhap vao canh thu ba cua tam giac
+        let c = prompt("nhap vao canh thu ba cua tam giac");
+        let c1 = parseFloat(c);
+        //kiem tra cac canh vua nhap co phai la mot tam giac hay khong
+        if((a1+b1)>c1&&(a1+c1)>b1&&(b1+c1)>a1)
+        {
+            //kiem tra truong hop tam giac deu
+            if(a1==b1&&a1==c1)
+            {
+                console.log("3 canh da nhap tao thanh mot tam giac deu");
+            }
+            //kiem tra truong hop tam giac can
+            else if(a1==b1||a1==c1||b1==c1){
+                console.log("3 canh da nhap tao thanh mot tam giac can");
+            }
+            //kiem tra truong hop tam giac vuong
+            else if(a1*a1+b1*b1==c1*c1||a1*a1+c1*c1==b1*b1||b1*b1+c1*c1==a1*a1)
+            {
+                console.log("3 canh da cho tao thanh  mot tam giac vuong");
+            }
+            //truong hop tam giac thuong
+            else{
+                console.log("3 canh da cho tao thanh mot tam giac thuong");
+            }
+        }
+        //khong thoa man dieu kien tao thanh mot tam giac
+        else{
+            console.log("3 canh da cho khong the tao thanh mot tam giac");
+        }
+
+    </script>
+</body>
+</html>

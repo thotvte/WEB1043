@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+</head>
+<body>
+  <script> 
+    //giai phuong trinh bac hai
+        //khai bao he so bac hai cua phuong trinh
+        let a = prompt("nhap vao he so bac hai cua phuong trinh: ");
+        //ep gia tri chuoi vua nhap thanh float
+        let a1 = parseFloat(a);
+        //khai bao he so bac nhat cua phuong trinh bac hai
+        let b = prompt("nhap vao he so bac hai cua phuong trinh: ");
+        //ep gia tri chuoi vua nhap thanh float
+        let b1 = parseFloat(b);
+       //khai bao he so tu do cua phuong trinh bac hai
+       let c = prompt("nhap vao he so tu do cua phuong trinh: ");
+       let c1 = parseFloat(c);
+       //he so bac hai = 0
+       if(a==0)
+       {
+        if(b==0)
+        {
+           if(c==0)
+           {
+            console.log("phuong trinh co vo so nghiem");
+           }
+           else
+           {
+            console.log("phuong trinh vo nghiem");
+           }
+        }
+        else
+        {
+            console.log("phuong trinh co nghiem duy nhat x = "+(-c1/b1));
+        }
+       }
+       else
+       {
+            let denTa = b1*b1-4*a1*c1;
+            if(denTa<0)
+            {
+                console.log("phuong trinh vo nghiem");
+            }
+            else if(denTa==0)
+            {
+                console.log("phuong trinh co nghiem kep x1=x2= "+(-b1/2*a1));
+            }
+            else
+            {
+                console.log("phuong trinh co 2 nghiem phan biet: ");
+                console.log("x1 = "+((Math.sqrt(denTa))/(2*a1)));
+                console.log("x2 = "+((-b1-Math.sqrt(denTa))/2*a1));
+            }
+       }
+  </script>
+   
+
+</body>
+</html>

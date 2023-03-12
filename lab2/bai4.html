@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //khai bao mang co ten days va gan cac gia tri ban dau cho mang theo yeu cau de bai
+        var days = ["Tue","Thu","Sat","Nine"];
+        //xoa phan tu nine ra khoi mang
+        days.pop();
+        //them phan tu Sunday vao cuoi mang
+        days.push("Sunday");
+        //them phan tu monday vao vi tri dau tien cua mang
+        days.unshift("Mon");
+        //xoa phan tu Thu khoi mang va them lai phan tu wed,thur,friday theo thu tu
+        days.splice(2,1,"Wed","Thur","Friday");
+        //in mang theo dung thu tu ngay ra man hinh
+        //in ra thu tu cac phan tu cua mang kem theo dinh dang a--b--c
+        document.writeln(days.join("--"));
+
+    </script>
+</body>
+</html>
