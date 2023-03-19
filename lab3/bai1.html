@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truong van tho - pd07294 - IT18301</title>
+    <script>
+        // kiem tra diem tu 0-->10
+        function checkDiem(diem)
+        {
+            let check = true;
+            if(toan < 0 || toan >10 || ly < 0 || ly > 10 || hoa < 0 || hoa > 10 || sinh < 0 || sinh > 10 )
+            {
+                check = false;
+            }
+            return check;
+            
+        }
+    </script>
+</head>
+<body> 
+    <script>
+       
+        let toan, ly, hoa, sinh;
+        
+        
+        // nhap vao diem toan 
+        do
+        {
+            check = true;
+            toan = parseFloat(prompt("xin moi nhap diem toan : "));
+            if(checkDiem(toan)==false||toan==null||toan=="")
+            {
+                alert("ban da nhap diem khong hop le!!");
+                alert("vui long nhap lai o khoang diem tu 0 -- > 10");
+                check =false;
+            }
+        }
+        while(check ==false);
+
+        // nhap vao diem ly
+        do
+        {
+            check = true;
+            ly = parseFloat(prompt("xin moi nhap diem ly : "));
+            if(checkDiem(ly)==false||ly==null||ly=="")
+            {
+                alert("ban da nhap diem khong hop le!!");
+                alert("vui long nhap lai o khoang diem tu 0 -- > 10");
+                check =false;
+            }
+        }
+        while(check ==false);
+
+
+        // nhap vao diem hoa 
+        do
+        {
+            check = true;
+            hoa = parseFloat(prompt("xin moi nhap diem hoa : "));
+            if(checkDiem(hoa)==false||hoa==null||hoa=="")
+            {
+                alert("ban da nhap diem khong hop le!!");
+                alert("vui long nhap lai o khoang diem tu 0 -- > 10");
+                check =false;
+            }
+        }
+        while(check ==false);
+
+        // nhap vao diem sinh 
+        do
+        {
+            check = true;
+            sinh = parseFloat(prompt("xin moi nhap diem sinh : "));
+            if(checkDiem(sinh)==false||sinh==null||sinh=="")
+            {
+                alert("ban da nhap diem khong hop le!!");
+                alert("vui long nhap lai o khoang diem tu 0 -- > 10");
+                check =false;
+            }
+        }
+        while(check ==false);
+        // tinh diem trung binh 
+        let diemTB = (toan + ly + hoa + sinh)/4;
+
+        console.log("Menu:");
+        console.log("1. Tính điểm trung bình (switch case)");
+        console.log("2. Tính điểm trung bình (if else)");
+        console.log("0. Thoát");
+        let choice = prompt("xin moi ban lua chon 1 && 2 : ");
+        switch(choice)
+        {
+            case "1" :
+                {
+                    console.log("diem trung binh cua hoc sinh la : " + diemTB);
+                    switch(true)
+                    {
+
+                        case (diemTB >= 9):
+                        console.log("hoc luc gioi");
+                        break;
+                        case (diemTB >= 7):
+                        console.log("Hoc luc kha");
+                        break;
+                        case (diemTB >= 5):
+                        console.log("Hoc luc Trung binh");
+                        break;
+                        case (diemTB >= 0):
+                        console.log("Hoc luc yeu ");
+                        break;
+
+                    }
+                }
+            case "2" : // xep loai hoc luc if else 
+            {
+                let xepLoai;
+            if(diemTB >= 9){
+                xepLoai = " gioi";
+            }else if(diemTB >= 7 ){
+                xepLoai = "kha";
+            }else if(diemTB >= 5){
+                xepLoai = "trung binh";
+            }else{
+                xepLoai = "yeu";
+            }
+               console.log("diem trung binh cua hoc sinh la : " + diemTB +" "+ "xep loai: " +xepLoai);
+
+
+            }
+               
+            
+        
+        }   
+        
+    </script>
+</body>
+</html>
