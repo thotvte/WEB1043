@@ -7,28 +7,56 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Máy tính đơn giản</h1>
-    <form>
-      <label for="num1">Số thứ nhất:</label>
-      <input type="number" id="num1" name="num1"><br><br>
+    <h1>Máy Tính Đơn Giản </h1>
+    Number 1 <input type="text" id="n1">
+    <br>
+    <br>   
+    Number 2 <input type="text" id="n2">
+    <br>
+    <br>
 
-      <label for="operator">Phép tính:</label>
-      <select id="operator" name="operator">
-        <option value="+">Cộng (+)</option>
-        <option value="-">Trừ (-)</option>
-        <option value="*">Nhân (*)</option>
-        <option value="/">Chia (/)</option>
-      </select><br><br>
-
-      <label for="num2">Số thứ hai:</label>
-      <input type="number" id="num2" name="num2"><br><br>
-
-      <input type="button" value="Tính" onclick="calculate()">
-
-      <p>Kết quả: <span id="result"></span></p>
-    </form>
+    operator
+    <select id="operator">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <br>
+    <br>   
+    Ket Qua <input type="text" id="ketqua">
+    <br>
+    <br>
+    <button onclick="tinhtoan()">tinh</button>
     <script>
-        
+      function tinhtoan()
+      {
+        var n1 = document.getElementById('n1').value;
+        var n2 = document.getElementById('n2').value;
+        var operator = document.getElementById('operator').value;
+        var ketqua = 0;
+        if(operator == "+")
+        {
+          ketqua = parseInt(n1) + parseInt(n2);
+          document.getElementById('ketqua').value = ketqua;
+        }else if(operator == "-")
+        {
+          ketqua = parseInt(n1) - parseInt(n2);
+          document.getElementById('ketqua').value = ketqua;
+        }else if(operator == "*")
+        {
+          ketqua = parseInt(n1) * parseInt(n2);
+          document.getElementById('ketqua').value = ketqua;
+        }else{
+          if(n2 == 0){
+            alert("can not div 0");
+
+          }else{
+            ketqua = parseInt(n1) / parseInt(n2);
+            document.getElementById('ketqua').value = ketqua;
+          }
+        }
+      }
     </script>
 </body>
 </html>
