@@ -54,6 +54,5 @@ console.log('Danh sách sinh viên:');
 studentList.forEach(student => {
   console.log(`- ${student.getFullName()} (${student.getCurrentAgeInYears()} tuổi; ${student.getCurrentAgeInDays()} ngày tuổi)`);
 });
-
 // In width và height cua man hinh
 console.log(`Kích thước màn hình: ${window.innerWidth} x ${window.innerHeight}`);
