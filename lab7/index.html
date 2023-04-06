@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            padding: 20px;
+
+        }
+        .h5{
+            text-align: center;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+            background-color: wheat;
+            padding: 20px;
+
+        }
+        .left-col{
+            border: 1px solid salmon;
+            width: 100px;
+            height: 250px;
+            padding: 10%;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        .right-col{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+        }
+        .item{
+            padding: 5px 15px 5px 15px;
+            border: 1px brown;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h5>DRAG AND DROP</h5>
+        <div class="main">
+            <div id="bin" class="left-col">
+                BIN
+            </div>
+            <div class="right-col">
+                <span class="item" id="one">ONE</span>
+                <span class="item" id="two">TWO</span>
+                <span class="item" id="three">THREE</span>
+                <span class="item" id="four">FOUR</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let items = document.getElementsByClassName("item");
+        for (let i=0; i<items.length; i++){
+            let item = items[i];
+            //set draggable = true
+            item.setAttribute("draggable", true);
+            item.addEventListener("dragstart", (event)=>{
+                event.dataTransfer.setData("itemId", item.id);
+            });
+        }
+        //drop
+        let bin = document.getElementById("bin");
+        //drag over event
+        bin.addEventListener("dragover", (e)=>{
+            if(e.preventDefault) e.preventDefault(); //cho phep drop
+        });
+        //drop event
+        bin.addEventListener("drop", (event)=>{
+            let itemId = event.dataTransfer.getData("itemId");
+            event.target.appendChild(document.getElementById(itemId));
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
