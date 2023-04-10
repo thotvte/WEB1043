@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Player</title>
+	<style>
+  .video-container {
+	width: 640px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+video {
+	width: 100%;
+}
+
+.controls {
+	margin-top: 10px;
+}
+
+button {
+	padding: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+button:hover {
+	background-color: red;
+}
+
+button.play {
+	background-color: blue;
+}
+
+button.play:hover {
+	background-color: #1348a4;
+}
+
+button.active {
+	background-color: #f44336;
+}
+
+button.active:hover {
+	background-color: #d32f2f;
+}
+
+input[type="range"] {
+	margin-left: 10px;
+}
+  </style>
+</head>
+<body>
+	<div class="video-container">
+		<video id="videoPlayer" src="/lab8/y2meta.com - ENA ENA IMUT IMUT _ Icona Pop - All Night (DJ Desa Bootleg)(720p).mp4"></video>
+		<div class="controls">
+			<button id="playPauseBtn" class="play">Play</button>
+			<button id="stopBtn">Stop</button>
+			<button id="loopBtn" class="active">Loop</button>
+      <button id="volUpBtn">+</button>
+			<button id="volDownBtn">-</button>
+			
+		</div>
+			
+	</div>
+	<script>
+    var videoPlayer = document.getElementById("videoPlayer");
+    var playPauseBtn = document.getElementById("playPauseBtn");
+    var stopBtn = document.getElementById("stopBtn");
+    var loopBtn = document.getElementById("loopBtn");
+    
+    var volUpBtn = document.getElementById("volUpBtn");
+    var volDownBtn = document.getElementById("volDownBtn");
+
+playPauseBtn.addEventListener("click", function() {
+	if (videoPlayer.paused || videoPlayer.ended) {
+		videoPlayer.play();
+		playPauseBtn.innerHTML = "Pause";
+	} else {
+		videoPlayer.pause();
+		playPauseBtn.innerHTML = "Play";
+	}
+});
+
+stopBtn.addEventListener("click", function() {
+	videoPlayer.pause();
+	videoPlayer.currentTime = 0;
+	playPauseBtn.innerHTML = "Play";
+});
+
+loopBtn.addEventListener("click", function() {
+	if (videoPlayer.loop) {
+		videoPlayer.loop = false;
+		loopBtn.classList.remove("active");
+	} else {
+		videoPlayer.loop = true;
+		loopBtn.classList.add("active");
+	}
+});
+
+
+
+volUpBtn.addEventListener("click", function() {
+	if (videoPlayer.volume < 1) {
+		videoPlayer.volume += 0.1;
+	}
+});
+
+volDownBtn.addEventListener("click", function() {
+	if (videoPlayer.volume > 0) {
+		videoPlayer.volume -= 0.1;
+	}
+});
+  </script>
+</body>
+</html>
