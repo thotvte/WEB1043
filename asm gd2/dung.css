@@ -1,3 +1,4 @@
+
 .container-homepage{
   width: 100%;
   padding:0 10%;
@@ -189,7 +190,7 @@
   background-color:bisque;
 }
 .service {
-  background-color: rgb(150, 99, 127);
+  background-color: rgb(237, 231, 231);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,7 +208,7 @@
 .item {
   height: fit-content;
   width: 120px;
-  background-color: brown;
+  background-color: rgb(194, 184, 184);
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -220,6 +221,7 @@
   background-color: antiquewhite;
   width: 100px;
   height: 100px;
+  
 }
 .item-des {
   margin-top: 5px;
@@ -229,7 +231,7 @@
 }
 .noidung {
   overflow: hidden;
-  background-color: #717171;
+  background-color: rgb(237, 231, 231);
   height: 400px;
   padding-top: 50px;
 }
@@ -243,7 +245,7 @@
 
 .noidung span {
   display: block;
-  color: #fff;
+  color: #252424;
   font: 1em sans-serif;
   font-size: 20;
   margin-top: 15px;
@@ -257,7 +259,7 @@
 }
 .noidung1 {
   overflow: hidden;
-  background-color: #717171;
+  background-color: rgb(237, 231, 231);
   height: 400px;
   padding-top: 50px;
 }
@@ -267,11 +269,19 @@
   margin-left: 70px;
   border-radius: 15px;
   margin-right: 15px;
+ 
+}
+
+#myImg {
+  transition: transform 0.5s ease;
+}
+#myImg:hover {
+  transform: scale(1.2);
 }
 
 .noidung1 span {
   display: block;
-  color: #fff;
+  color: #1d1c1c;
   font: 1em sans-serif;
   font-size: 20;
   margin-left: 20px;

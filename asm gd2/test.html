@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="nd2"> 
+    <img src="22.jpg" alt="" onmouseover="showButton(this)">
+    <div class="ndc2">
+        <h3>Chân thành mang tết yêu thương</h3>
+        <p>Hơn ai hết xuất thân từ vùng quê, từ nhỏ tôi đã yêu đã hiểu đã quý trọng cái không khí tết trung thu, đã biết nó không phải chỉ là một dịp lễ hội một năm có 1 lần mà là một 1 lần đó người ta nhận được gì và cho đi những gì…
+        </p>
+        <button style="display:none;">xem thêm</button>
+    </div>
+</div>
+
+
+</body>
+<script>
+  function showButton(img) {
+      img.nextSibling.querySelector('button').style.display = "block";
+  }
+  </script>
+</html>

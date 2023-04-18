@@ -1,12 +1,10 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
@@ -25,9 +23,8 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-
 }
-
+  
 /*            */
 const form = document.getElementById('contact-form');
     const nameInput = document.getElementById('name');
@@ -61,3 +58,25 @@ const form = document.getElementById('contact-form');
       // Thực hiện gửi form ở đây...
       alert('Form submitted successfully!');
     });
+    var img = document.getElementById("myImg");
+    img.addEventListener("mouseover", function() {
+      this.style.transform = "scale(1.2)";
+    });
+    img.addEventListener("mouseout", function() {
+      this.style.transform = "scale(1)";
+    });
+    var navLinks = document.querySelectorAll("nav ul li a");
+
+    var navLinks = document.querySelectorAll("nav ul li a");
+
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener("click", function(event) {
+        event.preventDefault();
+        var targetElement = document.querySelector(this.getAttribute("href"));
+        var targetPosition = targetElement.offsetTop - 50;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+      });
+    }

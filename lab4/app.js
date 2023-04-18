@@ -56,3 +56,4 @@ studentList.forEach(student => {
 });
 // In width và height cua man hinh
 console.log(`Kích thước màn hình: ${window.innerWidth} x ${window.innerHeight}`);
+console.log("haha");
